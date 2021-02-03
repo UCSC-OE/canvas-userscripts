@@ -212,7 +212,8 @@ function parseImport(importJson, callback) {
     for (const row of importJson.slice(headerRow + 1)) {
         if (row.length >= 1 && row[1] && row[1].includes('@')) {
             const minutes = row.length >= 2 ? row[minutesCol] : 0;
-            importUsers.push({'username': row[1].split("@")[0], 'matched': false, 'minutes': minutes});
+            //importUsers.push({'username': row[1].split("@")[0], 'matched': false, 'minutes': minutes});
+            importUsers.push({'username': row[1], 'minutes': minutes});
         } else if (row.length > 0 && row[0]) {
             noImports.push(row[0]);
         }
